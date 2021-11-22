@@ -1,5 +1,6 @@
 package meski.springframework.sfg;
 
+import meski.springframework.sfg.config.SfgConfiguration;
 import meski.springframework.sfg.controllers.*;
 import meski.springframework.sfg.datasource.FakeDataSource;
 import org.springframework.boot.SpringApplication;
@@ -40,6 +41,12 @@ public class SfgApplication {
 		System.out.println(fakeDataSource.getUsername());
 		System.out.println(fakeDataSource.getPassword());
 		System.out.println(fakeDataSource.getIdbcurl());
+
+		System.out.println("-------Config Props Bean");
+		SfgConfiguration sfgConfiguration = ctx.getBean(SfgConfiguration.class);
+		System.out.println(sfgConfiguration.getUsername());
+		System.out.println(sfgConfiguration.getPassword());
+		System.out.println(sfgConfiguration.getIdbcurl());
 	}
 
 }
