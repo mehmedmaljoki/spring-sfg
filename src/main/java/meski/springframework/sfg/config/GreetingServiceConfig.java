@@ -2,14 +2,31 @@ package meski.springframework.sfg.config;
 
 import meski.springframework.pets.PetService;
 import meski.springframework.pets.PetServiceFactory;
+import meski.springframework.sfg.datasource.FakeDataSource;
 import meski.springframework.sfg.repositories.EnglishGreetingRepository;
 import meski.springframework.sfg.repositories.EnglishGreetingRepositoryImpl;
 import meski.springframework.sfg.services.*;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.*;
 
-@ImportResource("classpath:sfgdi-config.xml")
+@PropertySource("classpath:datasource.properties")
+@ImportResource("classpath:sfg-config.xml")
 @Configuration
 public class GreetingServiceConfig {
+
+    @Bean
+    FakeDataSource fakeDataSource(@Value("${meski.username}") String username,
+                                  @Value("${meski.password}") String password,
+                                  @Value("${meski.jdbcurl}") String jdbcurl) {
+        FakeDataSource fakeDataSource = new FakeDataSource();
+        fakeDataSource.setUsername(username);
+        fakeDataSource.setPassword(password);
+        fakeDataSource.setIdbcurl(jdbcurl);
+
+        return fakeDataSource;
+    }
+
+
     @Bean
     PetServiceFactory petServiceFactory(){
         return new PetServiceFactory();
