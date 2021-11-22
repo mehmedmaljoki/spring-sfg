@@ -1,6 +1,6 @@
 package meski.springframework.sfg.controllers;
 
-import meski.springframework.sfg.services.PetService;
+import meski.springframework.pets.PetService;
 import org.springframework.stereotype.Controller;
 
 /**
