@@ -37,6 +37,7 @@ public class SfgApplication {
 		ConstructorInjectedController constructorInjectedController = (ConstructorInjectedController) ctx.getBean("constructorInjectedController");
 		System.out.println(constructorInjectedController.getGreeting());
 
+		System.out.println("-------Fake Data Source");
 		FakeDataSource fakeDataSource = ctx.getBean(FakeDataSource.class);
 		System.out.println(fakeDataSource.getUsername());
 		System.out.println(fakeDataSource.getPassword());
