@@ -1,0 +1,8 @@
+spring:
+  profiles:
+    active: dog,EN,qa
+meski:
+  username: yamlUserName
+  password: yamlPassword
+  jdbcurl: yamlUrlforDB
+
