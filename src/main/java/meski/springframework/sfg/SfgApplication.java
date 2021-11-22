@@ -1,6 +1,7 @@
 package meski.springframework.sfg;
 
 import meski.springframework.sfg.config.SfgConfiguration;
+import meski.springframework.sfg.config.SfgConstructorConfig;
 import meski.springframework.sfg.controllers.*;
 import meski.springframework.sfg.datasource.FakeDataSource;
 import org.springframework.boot.SpringApplication;
@@ -48,6 +49,13 @@ public class SfgApplication {
 		System.out.println(sfgConfiguration.getUsername());
 		System.out.println(sfgConfiguration.getPassword());
 		System.out.println(sfgConfiguration.getIdbcurl());
+
+		System.out.println("--------- Constructor binding");
+		SfgConstructorConfig sfgConstructorConfig = ctx.getBean(SfgConstructorConfig.class);
+		System.out.println(sfgConstructorConfig.getUsername());
+		System.out.println(sfgConstructorConfig.getPassword());
+		System.out.println(sfgConstructorConfig.getIdbcurl());
+
 	}
 
 }

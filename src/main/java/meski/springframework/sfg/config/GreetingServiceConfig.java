@@ -7,8 +7,10 @@ import meski.springframework.sfg.repositories.EnglishGreetingRepository;
 import meski.springframework.sfg.repositories.EnglishGreetingRepositoryImpl;
 import meski.springframework.sfg.services.*;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.*;
 
+@EnableConfigurationProperties(SfgConstructorConfig.class)
 @ImportResource("classpath:sfg-config.xml")
 @Configuration
 public class GreetingServiceConfig {
