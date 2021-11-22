@@ -1,0 +1,4 @@
+meski:
+  username: QADBUser
+  password: QAPassword
+  jdbcurl: URLforQADB

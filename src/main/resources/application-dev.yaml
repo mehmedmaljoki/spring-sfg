@@ -1,0 +1,4 @@
+meski:
+  username: DEVDBUser
+  password: DEVPassword
+  jdbcurl: URLforDEVDB
